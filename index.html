@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Testing API's</title>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Firebase Reference -->
+  	<script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+
+  	<!-- CSS -->
+  	<link rel="stylesheet" type="text/css" href="assets/style.css">
+
+  	<!-- Annimate CDN -->
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+     <style>
+       #map {
+        height: 400px;
+        width: 100%;
+        margin-top: 25px;
+       }
+    </style>
+  
+</head>
+
+  <body>
+
+  <div class="container">
+
+    <!-- Jumbotron for Title -->
+    <div class="jumbotron">
+      <h1>
+        <strong>
+          <i> Brewster </i>
+          <span id="image">
+            <img src="assets/images/craftbeer.jpg" alt="..." align="right" class="img-circle">
+          </span>
+        </strong>
+      </h1>
+
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <br>
+
+        <div class="panel panel-warning">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              <strong>
+                </i> Search Parameters</strong>
+            </h3>
+          </div>
+          <div class="panel-body">
+
+            <form role="form">
+
+              <div class="form-group">
+                <label for="style">Beer Style:</label>
+                <input type="text" class="form-control" id="beer-style">
+              </div>
+
+              <!-- Here we capture the number of records that the user wants to retrieve  -->
+              <div class="form-group">
+                <label for="pwd">Number of Options:</label>
+                <select class="form-control" id="num-records-select">
+                  <option value="1">1</option>
+                  <!-- Setting the option for 5 as default -->
+                  <option value="5" selected>5</option>
+                  <option value="10">10</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="alcohol-content">ABV:</label>
+                <input type="text" class="form-control" id="alcohol-content">
+              </div>
+
+              <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" class="form-control" id="location">
+              </div>
+
+              <button type="submit" class="btn btn-default" id="run-search">
+                </i> Search</button>
+              <button type="button" class="btn btn-default" id="clear-all">
+                </i> Clear Results</button>
+
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="image">
+        <img src="assets/images/ingredients.png" alt="..." align="right" class="img-rounded">
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-sm-6">
+        <br>
+
+        <!-- This panel will initially be made up of a panel and wells for each of the articles retrieved -->
+        <div class="panel panel-warning">
+
+          <!-- Panel Heading for the retrieved articles box -->
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              <strong>
+                </i> Top Brews</strong>
+            </h3>
+          </div>
+
+<!--//Hold each of the resulting options -->
+            <div class="panel-body" id="beer-section">
+            	<table id="beer-table">
+            		<thead>
+            			<tr>
+            				<th>Beer Name</th>
+            				<th>Brewery</th>
+            				<th>ABV</th>
+            				<th>Beer Style</th>
+            				<th>Glass Type</th>
+            			</tr>
+            		</thead>
+
+            		<tbody></tbody>
+            	</table>			
+            </div>
+           
+        </div>
+
+       </div>
+
+       <div class="col-sm-6">
+        	<div id="map"></div>
+       </div>
+    </div>
+
+		
+
+    <!-- Footer Region -->
+    <div class="row">
+      <div class="col-sm-12">
+        <div id="footer">
+
+          <!-- Line Break followed by closing -->
+          <hr>
+          <h5>Be Brew-wary</i>
+          </h5>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  			
+
+
+
+<script type="text/javascript" src="app.js"></script>
+
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRoBFgQ8l2qx8Q5JVqkyWcqc3SqcGBuBY&callback=initMap">
+</script>
+
+</body>	
+</html>
+

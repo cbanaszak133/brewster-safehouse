@@ -1,0 +1,40 @@
+body {
+    /* background: blue; */
+    background-image: url('images/beer3.jpg');
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.jumbotron {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: flip;
+    background-color: #2f3233;
+    color: rgba(234, 192, 37, 0.68);
+    margin-top: 50px;
+    padding: 5px;
+    padding-bottom: 53px;
+    text-align: left;
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+.panel-panel-danger{
+    color: rgba(234, 192, 37, 0.68);
+}
+
+#image {
+    text-align: right;
+}
+
+.panel {
+    background-color: #3d4041;
+    color:rgba(234, 192, 37, 0.68);
+}
+
+#footer {
+    background-color: #2f3233;
+    color: rgba(234, 192, 37, 0.68);
+    text-align: center;
+    padding-bottom: 10px;
+    opacity: 0.8;
+}
