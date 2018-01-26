@@ -90,7 +90,7 @@
 
         google.maps.event.addListener(marker, 'click', function() {
           infowindow.setContent('<div><strong>' + name + '</strong><br>' 
-             + formatted_address + '</div>');
+             + formatted_address + '<br>' + "<a href='"+ website + "' >" + website + "</a>" + '</div>');
           infowindow.open(map, this);
         });
           
